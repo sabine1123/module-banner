@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Banner</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="./banner.js"></script>
+    <style>
+        .banner{
+            max-width: 1200px;
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+        }
+
+        .banner .btn{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+            padding: 5px 8px;
+            background-color: #000000;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .wrap{
+            position: absolute;
+            top: 0;
+        }
+        
+        /* .transition .wrap{
+            transition: top .8s linear;
+        } */
+
+        .closing, .closed{
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .opened, .opening {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .closed .wrap{         
+            top: -300px;
+        }
+        
+        .transition{
+            transition: height .8s linear;
+        }
+
+    </style>  
+
+</head>
+<body>
+    <div class="banner">
+        <a class="wrap" href="#">
+            <img class="img" src="./imgs/1200x380.png" title="輸入廣告促銷說明文字" alt="輸入廣告促銷說明文字">
+        </a>
+    </div> 
+<script>
+
+    $('.banner').banner({
+        openAtStart: true,
+        button: {
+            closeText: '收合', 
+            openText: '展開', 
+            class: 'btn' 
+        },
+        transition: true,
+        autoToggle: true
+    });
+    // $('.banner').banner('toggle');
+
+</script>   
+</body>
+</html>
